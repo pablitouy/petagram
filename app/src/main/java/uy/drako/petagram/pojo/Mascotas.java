@@ -1,4 +1,4 @@
-package uy.drako.petagram;
+package uy.drako.petagram.pojo;
 
 public class Mascotas {
     private int foto;

@@ -10,6 +10,9 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
+import uy.drako.petagram.adapter.MascotaAdaptador;
+import uy.drako.petagram.pojo.Mascotas;
+
 public class Favoritos extends AppCompatActivity {
     private ArrayList<Mascotas> mascotas;
     private RecyclerView listaMascotas;
@@ -49,7 +52,7 @@ public class Favoritos extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        
+
     }
 
     @Override

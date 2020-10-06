@@ -8,7 +8,10 @@
     android:elevation="@dimen/elevacion_actionbar"
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:layout_scrollFlags="scroll|enterAlways"
+    android:id="@+id/toolbar"
     >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -32,11 +35,12 @@
         <ImageView
             android:id="@+id/imgStar"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="150dp"
+            android:layout_marginLeft="100dp"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/star"
             ></ImageView>
 
     </LinearLayout>
+
 </androidx.appcompat.widget.Toolbar>

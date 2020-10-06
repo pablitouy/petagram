@@ -1,4 +1,4 @@
-package uy.drako.petagram;
+package uy.drako.petagram.adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,7 +13,8 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
 import java.util.ArrayList;
 
-import static android.widget.Toast.*;
+import uy.drako.petagram.pojo.Mascotas;
+import uy.drako.petagram.R;
 
 public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.MascotaViewHolder>{
 
