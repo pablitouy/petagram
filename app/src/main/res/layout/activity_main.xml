@@ -5,11 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <include layout="@layout/actionbar"
-        android:id="@+id/miActionBar"
-        >
 
-    </include>
 
     <com.google.android.material.appbar.AppBarLayout
     android:layout_width="match_parent"
@@ -17,7 +13,11 @@
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
 
     >
+        <include layout="@layout/actionbar"
+            android:id="@+id/miActionBar"
+            >
 
+        </include>
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"

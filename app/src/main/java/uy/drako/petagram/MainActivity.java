@@ -26,7 +26,7 @@ import uy.drako.petagram.adapter.PageAdapter;
 import uy.drako.petagram.fragment.FragmentHome;
 import uy.drako.petagram.fragment.FragmentPerfil;
 import uy.drako.petagram.pojo.Mascotas;
-
+import android.net.Uri;
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
@@ -96,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
     private void setUpViewPager(){
         viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragment()));
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_perfil);
     }
 
 

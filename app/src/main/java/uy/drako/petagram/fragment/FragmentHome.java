@@ -46,5 +46,9 @@ public class FragmentHome extends Fragment {
         mascotas.add(new Mascotas(R.drawable.m2,"Rufus",2));
         mascotas.add(new Mascotas(R.drawable.m1,"Pepe",0));
         mascotas.add(new Mascotas(R.drawable.m2,"Julius",10));
+        mascotas.add(new Mascotas(R.drawable.m1,"Marco",5));
+        mascotas.add(new Mascotas(R.drawable.m2,"Polo",2));
+        mascotas.add(new Mascotas(R.drawable.m1,"Pepito",0));
+        mascotas.add(new Mascotas(R.drawable.m2,"Picard",10));
     }
 }
