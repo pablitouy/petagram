@@ -1,6 +1,7 @@
 package uy.drako.petagram.pojo;
 
 public class Mascotas {
+    private int id;
     private int foto;
     private String nombre;
     private int like;
@@ -9,6 +10,10 @@ public class Mascotas {
         this.nombre = nombre;
         this.foto = foto;
         this.like = like;
+    }
+
+    public Mascotas() {
+
     }
 
     public int getFoto() {
@@ -39,4 +44,11 @@ public class Mascotas {
         }
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

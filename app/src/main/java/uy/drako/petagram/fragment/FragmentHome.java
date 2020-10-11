@@ -1,5 +1,6 @@
 package uy.drako.petagram.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,38 +18,41 @@ import java.util.ArrayList;
 import uy.drako.petagram.R;
 import uy.drako.petagram.adapter.MascotaAdaptador;
 import uy.drako.petagram.pojo.Mascotas;
+import uy.drako.petagram.presentador.FragmentHomePresenter;
+import uy.drako.petagram.presentador.IFragmentHomePresenter;
 
 
-public class FragmentHome extends Fragment {
+public class FragmentHome extends Fragment implements IFragmentHomeView {
     private ArrayList<Mascotas> mascotas;
     private RecyclerView listaMascotas;
+    private IFragmentHomePresenter presenter;
+    private Activity actividad;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         listaMascotas = (RecyclerView) v.findViewById(R.id.listaMascotas);
+        presenter = new FragmentHomePresenter(this, getContext());
+        return v;
+    }
+
+
+    @Override
+    public void generarLineraLayoutVertical() {
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         listaMascotas.setLayoutManager(llm);
-        llenarListaMascotas();
-        inicializarAdaptador();
-        return v;
-        //return super.onCreateView(inflater, container, savedInstanceState);
+
     }
-    public void inicializarAdaptador(){
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas);
+
+    @Override
+    public MascotaAdaptador crearAdaptador(ArrayList<Mascotas> mascotas) {
+        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas, actividad);
+        return adaptador;
+    }
+
+    @Override
+    public void inicializarAdaptadorRV(MascotaAdaptador adaptador) {
         listaMascotas.setAdapter(adaptador);
 
-    }
-
-    public void llenarListaMascotas(){
-        mascotas = new ArrayList<Mascotas>();
-        mascotas.add(new Mascotas(R.drawable.m1,"Ronco",5));
-        mascotas.add(new Mascotas(R.drawable.m2,"Rufus",2));
-        mascotas.add(new Mascotas(R.drawable.m1,"Pepe",0));
-        mascotas.add(new Mascotas(R.drawable.m2,"Julius",10));
-        mascotas.add(new Mascotas(R.drawable.m1,"Marco",5));
-        mascotas.add(new Mascotas(R.drawable.m2,"Polo",2));
-        mascotas.add(new Mascotas(R.drawable.m1,"Pepito",0));
-        mascotas.add(new Mascotas(R.drawable.m2,"Picard",10));
     }
 }

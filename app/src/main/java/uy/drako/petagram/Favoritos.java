@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import uy.drako.petagram.pojo.Mascotas;
 public class Favoritos extends AppCompatActivity {
     private ArrayList<Mascotas> mascotas;
     private RecyclerView listaMascotas;
-
+    private Activity actividad;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +37,7 @@ public class Favoritos extends AppCompatActivity {
     }
 
     public void inicializarAdaptador(){
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas);
+        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas, actividad);
         listaMascotas.setAdapter(adaptador);
 
     }
